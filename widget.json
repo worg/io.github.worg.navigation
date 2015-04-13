@@ -1,0 +1,13 @@
+{
+	"id": "io.github.worg.navitation",
+	"name": "io.github.worg.navitation",
+	"description" : "",
+	"author": "Appcelerator, Inc., Hiram J. Perez",
+	"version": "1.0",
+	"copyright":"Copyright (c) 2014 - 2015",
+	"license":"Apache",
+	"min-alloy-version": "1.0",
+	"min-titanium-version":"2.1",
+	"tags":"navigation, window stack, stack",
+	"platforms":"android,blackberry,ios,mobileweb"
+}
