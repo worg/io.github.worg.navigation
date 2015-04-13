@@ -15,9 +15,9 @@
 
 	<!-- Android -->
 	<Window platform="android" exitOnClose="false">
-        <Menu id="menu" platform="android" >
-            <!-- <MenuItem id="item1" title="Menu" /> -->
-        </Menu>
+        <!-- <Menu id="menu" platform="android" >
+            <MenuItem id="item1" title="Menu" />
+        </Menu> -->
 		<ScrollableView id="navigation"/>
 		<View id="drawer" />		
 	</Window>

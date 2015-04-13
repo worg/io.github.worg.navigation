@@ -1,8 +1,8 @@
 <Alloy>
 	<Window platform="ios" id="win">
-        <LeftNavButton id="leftNavButton">
-            <!-- <Button id="drawerpull" class="menuButton"/> -->
-        </LeftNavButton>
+        <!-- <LeftNavButton id="leftNavButton">
+            <Button id="drawerpull" class="menuButton"/>
+        </LeftNavButton> -->
 
 		<View id="content" />		
 		<!-- <View id="drawer" formFactor="handheld" /> -->

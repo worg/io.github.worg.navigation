@@ -1,15 +1,3 @@
-
-
-".menuButton[platform=ios]":{
-	height:30, 
-	width:30,
-	backgroundImage:'/images/ios/io.github.worg.navigation/drawerButton.png'
-},
-
-"#leftNavButton":{},
-"#drawerpull":{
-	backgroundImage:'/images/ios/io.github.worg.navigation/drawerButton.png'
-},
 "#content":{},
 
 "#drawer": {
@@ -29,10 +17,6 @@
 	translucent: false,
 	font:{
 		fontSize:12,
-		fontFamily:'Oswald-Bold',
+		// fontFamily:'Oswald-Bold',
 	}
-}
-
-"#content[platform=ios]":{
-	//top: 10,
 }

@@ -77,21 +77,17 @@ if(OS_IOS) {
  */
 var advance = function(view) {
 
-    // if (oldView && view.id == oldView.id) {
-    //  retreat();
-    //  return;
-    // }
+    if (oldView && view.id == oldView.id) {
+     retreat();
+     return;
+    }
 
-    // oldView = (OS_IOS ? 
-    //        (widgetViews.length > 0 ? widgetViews[widgetViews.length -1].content : null) :
-    //        ($.navigation.views.length > 0 ? $.navigation.views[widgetViews.length -1].content : null));
-
-    // $.trigger('nav:advance', {id: view.id});
-    Ti.API.debug('VIEW:', view)
+    oldView = OS_IOS ? (widgetViews.length > 0 ? _.last(widgetViews).content : null) :
+              ($.navigation.views.length > 0 ? _.last(navigation.views).content : null);
+    
+    $.trigger('nav:advance', {id: view.id});
     advanceImpl(view, false);
-
-    Ti.API.debug('CURRENTVIEW:', widgetViews)
-    // Alloy.Globals.currentView = view;
+    Alloy.Globals.currentView = view;
 };
 
 
@@ -113,27 +109,16 @@ if(OS_IOS) {
                 pageWidget = Widget.createWidget('io.github.worg.navigation', 'page');
                 win = pageWidget.getView();
             }
+
+            Ti.API.warn('WIN:', win)
     
             widgetViews.push({window: win, widget: pageWidget, content:view});
-            // win.addEventListener("close", function() {closeDrawer(true);});
             win.addEventListener("close", removeWidgetView);
     
             // create window using the page widget
             pageWidget.content.add(view);
     
             win.title = view.title;
-    
-            // move drawer to the new window
-            if(Alloy.isHandheld) {
-                // drawer = pageWidget.getView("drawer");
-                // drawerContent && drawer.add(drawerContent);
-            }
-
-            // if (widgetViews.length > 1 ) {
-            //  win.rightNavButton = win.leftNavButton;
-            //  win.rightNavButton.addEventListener('click', toggleDrawer);
-            //  win.leftNavButton = undefined;
-            // }
 
             // advance animation
             if(widgetViews.length > 1) {
