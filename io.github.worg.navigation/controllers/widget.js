@@ -17,7 +17,6 @@ var drawer, drawerContent;
 var detail = (OS_IOS && Alloy.isTablet) ? $.detailWindow : $.widget;
 
 if(OS_IOS) {
-
     //
     //  WidgetViews are used to track the current position in navigation on iOS. They are not necessary in the Android
     //  implementation.
@@ -109,8 +108,6 @@ if(OS_IOS) {
                 pageWidget = Widget.createWidget('io.github.worg.navigation', 'page');
                 win = pageWidget.getView();
             }
-
-            Ti.API.warn('WIN:', win)
     
             widgetViews.push({window: win, widget: pageWidget, content:view});
             win.addEventListener("close", removeWidgetView);
@@ -254,21 +251,13 @@ var home = function(newHome) {
     } else {
 
         if(OS_IOS) {
-            
             retreat(1);
-            
         } else {
-
             home($.navigation.views[0]);
-            
         }
-
     }
     
 };
-
-if(OS_IOS && Alloy.isTablet) {
-}
 
 if(OS_ANDROID) {
 
@@ -284,7 +273,6 @@ if(OS_ANDROID) {
     };
 
     detail.addEventListener('androidback', back);
-    
 }
 
 _.extend($, {
